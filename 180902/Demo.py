@@ -214,3 +214,13 @@ def without_stars(kwds):
 args = {'name': 'Mr. Gumby', 'age': 42}
 with_stars(**args)
 without_stars(args)
+
+
+# 拼接操作符“传递”参数
+def foo(x, y, z, m=0, n=0):
+    print(x, y, z, m, n)
+
+
+def call_foo(*args, **kwds):
+    print("Calling foo!")
+    foo(*args, **kwds)
