@@ -216,7 +216,7 @@ with_stars(**args)
 without_stars(args)
 
 
-# 拼接操作符“传递”参数
+# 拼接操作符“传递”参数 例子
 def foo(x, y, z, m=0, n=0):
     print(x, y, z, m, n)
 
