@@ -189,3 +189,28 @@ def store(data, *full_names):
                 people.append(full_name)
             else:
                 data[label][name] = [full_name]
+
+
+# 参数收集的逆过程
+def add(x, y):
+    return x + y
+
+
+params = (1, 2)
+print(add(*params))
+
+params = {'name': 'Sir Robin', 'greeting': 'Well met'}
+hello_3(**params)
+
+
+def with_stars(**kwds):
+    print(kwds['name'], 'is', kwds['age'], 'years old')
+
+
+def without_stars(kwds):
+    print(kwds['name'], 'is', kwds['age'], 'years old')
+
+
+args = {'name': 'Mr. Gumby', 'age': 42}
+with_stars(**args)
+without_stars(args)
