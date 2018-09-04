@@ -1,3 +1,4 @@
+# 例子
 def story(**kwds):
     return 'Once upon a time, there was a' \
            '%(job)s called %(name)s.' % kwds
@@ -19,4 +20,6 @@ def interval(start, stop=None, step=1):
         result.append(i)
         i += step
     return result
-print(story(job='King',name='Gumby'))
+
+
+print(story(job='King', name='Gumby'))
