@@ -1,0 +1,5 @@
+def rvs(s):
+    if s == "":
+        return s
+    else:
+        return rvs(s[1:]) + rvs(0)
