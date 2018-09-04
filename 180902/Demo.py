@@ -121,49 +121,71 @@ hello_1(greeting='Hello', name='world')
 hello_1(name='world', greeting='Hello')
 hello_2(greeting='Hello', name='world')
 
-def hello_3(greeting='Hello',name='world'):
-    print('%s,%s!'%(greeting,name))
+
+def hello_3(greeting='Hello', name='world'):
+    print('%s,%s!' % (greeting, name))
+
+
 hello_3()
 hello_3('Greetings')
-hello_3('Greetings','universe')
+hello_3('Greetings', 'universe')
 hello_3(name='Gumby')
 
-def hello_4(name,greeting='Hello',punctuation='!'):
-    print('%s,%s%s'%(name,greeting,punctuation))
+
+def hello_4(name, greeting='Hello', punctuation='!'):
+    print('%s,%s%s' % (name, greeting, punctuation))
+
+
 hello_4('Mars')
-hello_4('mars','Howdy')
-hello_4('mars','Howdy','...')
-hello_4('Mars','punctuation=''.')
-hello_4('Mars',greeting='Top of the morning to ya')
+hello_4('mars', 'Howdy')
+hello_4('mars', 'Howdy', '...')
+hello_4('Mars', 'punctuation=''.')
+hello_4('Mars', greeting='Top of the morning to ya')
+
 
 # 1. 收集参数
 def print_params_1(*params):
     print(*params)
+
+
 print_params_1('Testing')
-print_params_1(1,2,3)
-def print_params_2(title,*params):
+print_params_1(1, 2, 3)
+
+
+def print_params_2(title, *params):
     print_params_1(title)
     print_params_1(*params)
-print_params_2('Params:',1,2,3)
+
+
+print_params_2('Params:', 1, 2, 3)
 print_params_2('Nothing:')
+
+
 def print_params_3(**params):
     print(params)
-print_params_3(x=1,y=2,z=3)
-def print_params_4(x,y,z=3,*pospar,**keypar):
-    print(x,y,z)
+
+
+print_params_3(x=1, y=2, z=3)
+
+
+def print_params_4(x, y, z=3, *pospar, **keypar):
+    print(x, y, z)
     print(pospar)
     print(keypar)
-print_params_4(1,2,3,5,6,7,foo=1,bar=2)
-print_params_4(1,2)
 
-def store(data,*full_names):
+
+print_params_4(1, 2, 3, 5, 6, 7, foo=1, bar=2)
+print_params_4(1, 2)
+
+
+def store(data, *full_names):
     for full_name in full_names:
-        names=full_name.split()
-        if len(names)==2:names.insert(1,'')
-        labels='first','middle','last'
-        for label,name in zip(labels,names):
-            people=lookup(data,label,name)
+        names = full_name.split()
+        if len(names) == 2: names.insert(1, '')
+        labels = 'first', 'middle', 'last'
+        for label, name in zip(labels, names):
+            people = lookup(data, label, name)
             if people:
                 people.append(full_name)
             else:
-                data[label][name]=[full_name]
+                data[label][name] = [full_name]
