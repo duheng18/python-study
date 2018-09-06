@@ -39,3 +39,6 @@ def combine(parameter):
 parameter='berry'
 combine('Shrub')
 
+print(globals())
+print(locals())
+print(vars())
