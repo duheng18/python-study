@@ -33,12 +33,41 @@ def combine(parameter):
 external = 'berry'
 combine('Shrub')
 
+
 # 函数内使用全局变量加globals()
 def combine(parameter):
-    print(parameter+globals()['parameter'])
-parameter='berry'
+    print(parameter + globals()['parameter'])
+
+
+parameter = 'berry'
 combine('Shrub')
 
 print(globals())
 print(locals())
 print(vars())
+
+
+# 嵌套作用域
+# 一个函数放在里面
+def foo():
+    def bar():
+        print("Hello world!")
+
+    bar()
+
+
+# 用一个函数创建另一个
+def multiplier(factor):
+    def multiplyByFactor(number):
+        return number * factor
+
+    return multiplyByFactor
+
+
+double = multiplier(2)
+print(double(5))
+
+triple = multiplier(3)
+print(triple(3))
+
+print(multiplier(5)(4))
