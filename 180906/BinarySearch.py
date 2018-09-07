@@ -28,6 +28,7 @@ print([str(i) for i in range(10)])
 
 # fiter函数可以基于一个返回布尔值的函数对元素进行过滤
 def func(x):
+    # isalnum()检测字符串是否由字母和数字组成。
     return x.isalnum()
 
 
