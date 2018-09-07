@@ -22,7 +22,8 @@ print(search(seq, 100))
 
 # 函数式编程
 # map函数将序列中的元素全部传递给一个函数：
-print(list(map(str, range(5))))
+print(list(map(str, range(10))))
+print([str(i) for i in range(10)])
 
 
 # fiter函数可以基于一个返回布尔值的函数对元素进行过滤
