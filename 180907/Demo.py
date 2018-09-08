@@ -1,6 +1,5 @@
 # 封装（Encapsulation）：对外部世界隐藏对象的工作细节
 # 封装是可以不用关心对象是如何构建的而直接进行使用。
-
 # 多态
 class OpenObject:
     def setName(self, name):
