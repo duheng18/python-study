@@ -1,2 +1,2 @@
-import exceptions
-dir(exceptions)
+
+# raise Exception('hyperdrive overload')
