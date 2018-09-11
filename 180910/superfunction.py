@@ -1,4 +1,4 @@
-# 使用super函数调用父类构造函数
+# 使用super函数
 # __metaclass__ = type
 
 class Bird:
