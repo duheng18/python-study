@@ -1,2 +1,0 @@
-
-# raise Exception('hyperdrive overload')
