@@ -12,7 +12,8 @@ def checkIndex(key):
     (因为序列是无限长的。)
     """
 
-    if not isinstance(key, (int, long)): raise TypeError
+    if not isinstance(key, (int, long)):
+        raise TypeError
     if key < 0: raise IndexError
 
 
