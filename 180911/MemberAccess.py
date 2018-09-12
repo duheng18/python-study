@@ -12,7 +12,7 @@ def checkIndex(key):
     (因为序列是无限长的。)
     """
 
-    if not isinstance(key, (int, long)):
+    if not isinstance(key, (int)):
         raise TypeError
     if key < 0: raise IndexError
 
@@ -53,3 +53,5 @@ class ArithmeticSequence:
         """
         checkIndex(key)
         self.changed[key] = value  # 保存更改后的值
+s=ArithmeticSequence(1,2)
+print(s[4])
