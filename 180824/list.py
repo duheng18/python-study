@@ -33,11 +33,11 @@ name = list('Perl')
 print(name)
 name[1:] = list('ython')
 print(name)
-#分片赋值语句可以在不需要替换任何原有元素的情况下插入新的元素.即替换了一个空的分片。
-numbers=[1,5]
-numbers[1:1]=[2,3,4]
+# 分片赋值语句可以在不需要替换任何原有元素的情况下插入新的元素.即替换了一个空的分片。
+numbers = [1, 5]
+numbers[1:1] = [2, 3, 4]
 print(numbers)
-#通过分片来删除元素。==del numbers[1:4]
-numbers=[1,2,3,4,5]
-numbers[1:4]=[]
+# 通过分片来删除元素。==del numbers[1:4]
+numbers = [1, 2, 3, 4, 5]
+numbers[1:4] = []
 print(numbers)

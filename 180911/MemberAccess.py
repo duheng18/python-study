@@ -11,9 +11,11 @@ def checkIndex(key):
     为了能被接受，键应该是一个非负的整数。如果它不是一个整数，会引发TypeError;如果它是负数，则会引发IndexError
     (因为序列是无限长的。)
     """
-
-    if not isinstance(key, (int)):
+    # isinstance(key,int)判断key是否是int类型
+    if not isinstance(key, int):
+        # TypeError	对类型无效的操作
         raise TypeError
+    # IndexError 序列中没有此索引
     if key < 0: raise IndexError
 
 
@@ -41,7 +43,9 @@ class ArithmeticSequence:
 
         try:
             return self.changed[key]  # 修改了吗？
+        # KeyError映射中没有这个键key
         except KeyError:  # 否则...
+            # 如果元素没有修改，就计算self.start + key * self.step值
             return self.start + key * self.step  # ...计算值
 
     def __setitem__(self, key, value):
@@ -52,6 +56,16 @@ class ArithmeticSequence:
         :return:
         """
         checkIndex(key)
+        # 用户将特例规则保存在名为changed的字典中，从而修改一些元素的值。
         self.changed[key] = value  # 保存更改后的值
-s=ArithmeticSequence(1,2)
-print(s[4])
+
+
+s = ArithmeticSequence(1, 2)
+# print(s[4])
+s[4]=2
+# print(s[4])
+# print(s[5])
+# del s[4] AttributeError: __delitem__
+# s['four'] TypeError
+# s[-42]  IndexError
+#拓展 slice  __index__
