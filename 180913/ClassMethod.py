@@ -2,7 +2,7 @@ __metaclass__ = type
 
 
 class MyClass:
-    def smeth():
+    def smeth(self):
         print('This is a static method')
         smeth = staticmethod(smeth)
 
