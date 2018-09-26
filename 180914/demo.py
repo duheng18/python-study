@@ -38,3 +38,4 @@ for i in range(6 * t):
         r.append(i)
 print("组合不能生成的数字%s" % r)
 print("不能生成的最大数字为%s" % r[-1])
+
