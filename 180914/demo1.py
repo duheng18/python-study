@@ -9,11 +9,4 @@ import sys, pprint
 # （3）想将模块放在其他地方。
 # 使用环境变量
 # 3.命令模块
-import copy
 
-print(dir(copy))
-
-# 列表推导式是个包含dir(copy)中所有不以下划线开头的名字的列表。
-# import copy
-# [n for n in dir(copy) if not n.startswith('_')]
-# ['Error', 'copy', 'deepcopy', 'dispatch_table', 'error']
