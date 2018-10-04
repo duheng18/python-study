@@ -26,23 +26,4 @@ print(range.__doc__)
 print(copy.__file__)
 # /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/copy.py
 
-# 标准库
-# sys模块
-import sys
 
-# 变量sys.argv包含传递到Python解释器的参数，包括脚本名称。
-print(sys.argv)
-
-# 可以退出当前程序。
-print(sys.exit)
-
-# 将模块名映射到实际存在的模块上，它只应用于目前导入的模块。
-print(sys.modules)
-
-# 它是一个字符串列表，其中的每个字符串都是一个目录名，在import语句执行时，解释器就会从这些目录中查找模块。
-print(sys.path)
-
-# sys.platform模块变量是解释器正在其上运行的“平台”名称。
-print(sys.platform)
-
-# sys.stdin、sys.stdout和sys.stdout模块变量是类文件流对象。
