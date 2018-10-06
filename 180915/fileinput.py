@@ -1,4 +1,4 @@
-# coding:utf-8
+# encoding:utf-8
 # fileinput模块能够轻松地遍历文本文件的所有行。
 # fileinput.input(files,inplace,backup)便于遍历多个输入流中的行。
 # fileinput.filename()返回当前文件的名称
@@ -17,10 +17,13 @@
 # mode:读写模式，默认为只读
 # openhook:该钩子用于控制打开的所有文件，比如说编码方式等;
 # numberlines.py
-import sys
+
 import fileinput
+import sys
 
 for line in fileinput.input(inplace=True):
     line = line.rstrip()
     num = fileinput.lineno()
     print('%-40s # %2i' % (line, num))
+
+

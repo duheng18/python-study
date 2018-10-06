@@ -53,25 +53,7 @@ print(reduce(set.union, mySets))
 # 集合是可变的，所以不能用做字典中的键。集合本身只能包含不可变（可散列的）值，所以也就不能包含其他集合。
 # frozenset类型，用于代表不可变（可散列）的集合。frozenset构造函数创建给定集合的副本，不管是将集合
 # 作为其他集合成员还是字典的键，frozenset都很有用。
-a = set()
-b = set()
+# a = set()
+# b = set()
 
-# 2.堆 heapq（queue队列）模块包含一些堆操作函数的模块，包括6个函数，4个直接和堆操作有关。
-# heapq模块中重要的函数
-# heappush(heap,x)将x入堆
-# heappop(heap)将堆中最小的元素弹出
-# heapify(heap)将heap属性强制应用到任意一个列表
-# heapreplace(heap,x)将堆中最小的元素弹出，同时将x入堆。
-# nlargest(n,iter)返回iter中第n大的元素
-# nsmallest(n,iter)返回iter中第n小的元素
-from heapq import *
-import random
 
-data = range(10)
-random.shuffle(data)
-heap = []
-for n in data:
-    heappush(heap, n)
-print(heap)
-print(heappush(heap, 0.5))
-print(heap)
