@@ -6,23 +6,25 @@ from collections import deque
 q = deque(range(5))
 # 增加元素
 q.append(5)
-q.append(6)
+# 在左侧(开头)增加元素
+q.appendleft(6)
 print(q)
-# deque([0, 1, 2, 3, 4, 5, 6])
+# deque([6, 0, 1, 2, 3, 4, 5])
 # 弹出右侧的元素
 print(q.pop())
-# 6
-# 弹出左侧的元素
+# 5
+# 弹出左侧（开头）的元素
 print(q.popleft())
-# 0
-# 旋转元素（将它们左移或右移使头尾相连）
+# 6
+# rotate旋转元素（将它们左移或右移使头尾相连）
 q.rotate(3)
 print(q)
-# deque([3, 4, 5, 1, 2])
+# deque([2, 3, 4, 0, 1])
 q.rotate(-1)
 print(q)
-# deque([4, 5, 1, 2, 3])
+# deque([3, 4, 0, 1, 2])
 # extend和extendleft方法，extend和列表的extend方法差不多，extendleft则类似于appendleft。
+# extendleft使用的可迭代对象中的元素会反序出现在双端队列中。
 q.appendleft(0.1)
 print(q)
-# deque([0.1, 4, 5, 1, 2, 3])
+# deque([0.1, 3, 4, 0, 1, 2])
