@@ -1,0 +1,46 @@
+re模块包含对正则表达式的支持。查找满足特定任务需要的那部分内容。
+1.什么是正则表达式？
+*通配符
+可以匹配多于1个的字符串，使用一些特殊字符创建这类模式。如点号（.）只能匹配一个字母，不是两个或零个。
+可以匹配"任何字符"（除换行符外的任何单个字符），点号称为通配符。如：.ython可以匹配'python'、'jypthon'不能是'cpython'、'ython'
+*对特殊字符进行转义
+'python\\.org' 这样就知会匹配'python.org'
+*字符集
+如'[pj]ython'能够匹配'python'和'jython'
+'[a-z]'能够（按字母顺序）匹配a到z的任意一个字符。
+'[a-zA-Z0-9]'能够匹配任意大小写字母和数字（注意字符集只能匹配一个这样的字符）。
+'[^abc]'为了反转字符集可以在开头使用^字符，比如'[^abc]'可以匹配任何出了a、b和c之外的字符。
+注：特殊字符用做文本字符而不是正则表达式运算符，需要用反斜线进行转义。如^脱字符出现在字符集的开头、] -
+*选择符和子模式
+字符串的每个字符都各不相同的情况下，使用选择项的特殊字符(|)。如：'p(ython|erl)'。
+*可选项和重复子模式
+在子模式后面加上问号就变成了可选项。它可能出现在匹配字符串中，但并非必需的。
+如：r'(http://)?(www\.)?python\.org'
+只能匹配下列字符串：
+'http://www.python.org'
+'http://python.org'
+'www.python.org'
+'python.org'
+上述例子值得注意的点：
+（1）对点号进行了转义，防止它被作为通配符使用；
+（2）使用原始字符串减少所需反斜线的数量；
+（3）每个可选子模式都用圆括号括起；
+（4）可选子模式出现与否均可，而且互相独立；
+问号表示子模式可以出现一次或者根本不出现。下面这些运算符允许子模式重复多次：
+(pattern)*:允许模式重复0次或多次；
+(pattern）+:允许模式重复1次或多次；
+(pattern){m,n}:允许模式重复m~n次。
+例1：r'w*\.python\.org'匹配'www.python.org'、 '.python.org'、'ww.python.org'、'wwwwwww.python.org'
+例2：r'w+\.python\.org'匹配'w.python.org'不能匹配'.python.org'
+例3：r'w{3,4}\.python\.org'匹配'www.python.org'和'wwww.python.org'
+*字符串的开始和结尾
+2.re模块的内容
+re模块中一些重要的函数
+compile(pattern[flags])根据包含正则表达式的字符串创建模式对象
+search(pattern,string[flags])在字符串中寻找模式
+match(pattern,string[flags])在字符串的开始处匹配模式
+split(pattern,string[maxsplit=0])根据模式的匹配项来分割字符串
+findall(pattern,string)列出字符串中模式的所有匹配项
+sub(pat,repl,string[count=0])将字符串中所有pat的匹配项用repl替换
+escape(string)将字符串中所有特殊正则表达式字符转义
+
