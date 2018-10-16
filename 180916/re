@@ -43,4 +43,5 @@ split(pattern,string[maxsplit=0])根据模式的匹配项来分割字符串
 findall(pattern,string)列出字符串中模式的所有匹配项
 sub(pat,repl,string[count=0])将字符串中所有pat的匹配项用repl替换
 escape(string)将字符串中所有特殊正则表达式字符转义
+3.匹配对象和组
 
