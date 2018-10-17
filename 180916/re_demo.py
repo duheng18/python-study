@@ -14,8 +14,6 @@ print(re.split('[,]+', some_text, maxsplit=1))
 # ['alpha', 'beta,,,,gamma delta']
 print(re.split('[,]+', some_text, maxsplit=2))
 # ['alpha', 'beta', 'gamma delta']
-print(re.split('[,]+', some_text, maxsplit=3))
-# ['alpha', 'beta', 'gamma delta']
 pat = '[a-zA-Z]+'
 text = '"Hm...Err -- are you sure?" he said, sounding insecure.'
 print(re.findall(pat, text))

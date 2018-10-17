@@ -34,6 +34,12 @@ re模块包含对正则表达式的支持。查找满足特定任务需要的那
 例2：r'w+\.python\.org'匹配'w.python.org'不能匹配'.python.org'
 例3：r'w{3,4}\.python\.org'匹配'www.python.org'和'wwww.python.org'
 *字符串的开始和结尾
+上述所出现的模式匹配都是针对整个字符串的，但是也能寻找匹配模式的子字符串。
+例1:字符串"www.python.org"中的子字符串'www'会能够匹配模式'w+',在寻找这样的子字符串时，
+    确定子字符串位于整个字符串的开始还是结尾是很有用的.
+例2：只想在字符串的开头而不是其他位置匹配'ht+p',那么就可以使用脱字符（^）标记开始:
+    ^ht+p会匹配'http://python.org'(以及'httttp://python.org'),但是不匹配'www.http.org'
+    类似地，字符串结尾用美元符号（$）标识。
 2.re模块的内容
 re模块中一些重要的函数
 compile(pattern[flags])根据包含正则表达式的字符串创建模式对象
@@ -43,5 +49,16 @@ split(pattern,string[maxsplit=0])根据模式的匹配项来分割字符串
 findall(pattern,string)列出字符串中模式的所有匹配项
 sub(pat,repl,string[count=0])将字符串中所有pat的匹配项用repl替换
 escape(string)将字符串中所有特殊正则表达式字符转义
+说明：
+函数re.compile将正则表达式转换为模式对象，可以实现更有效率的匹配。
+
+函数re.search会在给定字符串中寻找第一个匹配给定正则表达式的子字符串。
+一旦找到子字符串，函数就会返回MatchObject（值为True）,否则返回None（值为False）。
+
+函数re.match会在给定字符串的开头匹配正则表达式。如：match('p','python')返回真，
+而re.match('p','www.python.org')则返回假（None）。
+
+函数re.split会根据模式的匹配项来分割字符串。类似字符串方法split，不过是用完整的正则表达式代替了固定的分隔符字符串。
+比如字符串方法split允许用字符串','的匹配项来分割字符串，而re.split允许用任意长度的逗号和空格序列来分割字符串。
 3.匹配对象和组
 
