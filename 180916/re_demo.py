@@ -35,3 +35,21 @@ print(re.escape('www.python.org'))
 print(re.escape('But where is the ambiguity?'))
 # But\ where\ is\ the\ ambiguity\?
 
+m = re.match(r'www\.(.*)\..{3}', 'www.python.org')
+print(m.group(1))
+# python
+print(m.start(1))
+# 4
+print(m.end(1))
+# 10
+print(m.span(1))
+# (4,10)
+
+emphasis_pattern = r'\*([^\*]+)\*'
+emphasis_pattern = re.compile(r'''
+    \* #Beginning emphasis tag -- an asterisk
+    (  #Begin group for capturing phrase
+    [^\*]+ #Capture anything except asterisks
+    )   #End group  
+    \*  #Ending emphasis tag 
+    ''', re.VERBOSE)
