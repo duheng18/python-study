@@ -137,3 +137,53 @@ def process(string):
     print('Processing:', string)
 更有用的实现包括将数据存储在数据结构中、计算总和、使用模块re进行模式替换以及添加行号。
 另外，要尝试运行这些示例，应将变量filename设置为实际使用的文件的名称。
+
+11.3.1 每次一个字符(或字节)
+如果你每次读取多个字符(字节)，可指定要读取的字符(字节)数。
+
+程序之所以可行，是因为到达文件末尾时，方法read将返回一个空字符串，但在此之前，
+返回的字符串都只包含一个字符(对应于布尔值True)。只要char为True，你就知道还没结束。
+with open(filename) as f:
+    char = f.read(1)
+    while char:
+        process(char)
+        char = f.read(1)
+赋值语句char = f.read(1)出现了两次，而代码重复通常被视为坏事。为避免这种重复，可使用第5章介绍的while True/break技巧。
+ with open(filename) as f:
+    while True:
+        char = f.read(1)
+        if not char: break
+        process(char)
+
+11.3.2 每次一行
+处理文本文件时，你通常想做的是迭代其中的行，而不是每个字符。通过使用11.2.1节介绍的方法readline，可像迭代字符一样轻松地迭代行。
+ with open(filename) as f:
+    while True:
+        line = f.readline()
+        if not line: break
+        process(line)
+11.3.3 读取所有内容
+如果文件不太大，可一次读取整个文件;为此，可使用方法read并不提供任何参数(将整个文件读取到一个字符串中)，
+也可使用方法readlines(将文件读取到一个字符串列表中，其中每个字符串都是一行)。通过这样的方式读取文件，
+可轻松地迭代字符和行。请注意，除进行迭代外，像这样将文件内容读取到字符串或列表中也对完成其他任务很有帮助。
+例如，可对字符串应用正则表达式，还可将列表存储到某种数据结构中供以后使用。
+使用read迭代字符
+with open(filename) as f:
+    for char in f.read():
+        process(char)
+使用readlines迭代行
+with open(filename) as f:
+    for line in f.readlines():
+        process(line)
+11.3.4 使用fileinput实现延迟行迭代
+有时候需要迭代大型文件中的行，此时使用readlines将占用太多内存。当然，你可转而结合使用while循环和readline，但在Python中，在可能的情况下，
+应首选for循环，而这里就属于这种情况。你可使用一种名为延迟行迭代的方法——说它延迟是因为它只读取实际需要的文本部分。
+使用fileinput迭代行
+import fileinput
+for line in fileinput.input(filename):
+    process(line)
+11.3.5 文件迭代器
+迭代文件
+with open(filename) as f:
+    for line in f:
+        process(line)
