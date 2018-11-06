@@ -184,6 +184,14 @@ for line in fileinput.input(filename):
     process(line)
 11.3.5 文件迭代器
 迭代文件
+在这些迭代示例中，我都将文件用作了上下文管理器，以确保文件得以关闭。虽然这通常是 个不错的主意，但只要不写入文件，就并非一定要这样做。
 with open(filename) as f:
     for line in f:
         process(line)
+在不将文件对象赋给变量的情况下迭代文件：
+for line in open(filename):
+    process(line)
+请注意，与其他文件一样，sys.stdin也是可迭代的，因此要迭代标准输入中的所有行，可 像下面这样做:
+import sys
+for line in sys.stdin:
+    process(line)
