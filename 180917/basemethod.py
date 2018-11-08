@@ -46,13 +46,12 @@ f.close()
 
 # writelines(list):
 f = open(r'/Users/baidu/Downloads/dh/python/180917/somefile2.txt')
-lines=f.readlines()
+lines = f.readlines()
 f.close()
-lines[1]="isn't a\n"
-f=open(r'/Users/baidu/Downloads/dh/python/180917/somefile2.txt','w')
+lines[1] = "isn't a\n"
+f = open(r'/Users/baidu/Downloads/dh/python/180917/somefile2.txt', 'w')
 f.writelines(lines)
 # this
 # isn't a
 # haiku
 f.close()
-
