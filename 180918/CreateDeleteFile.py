@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*-coding:utf-8-*-       #指定编码格式，python默认unicode编码
+# -*- coding:utf-8 -*-       #指定编码格式，python默认unicode编码
 
 import os
 
