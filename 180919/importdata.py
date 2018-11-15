@@ -33,7 +33,7 @@ fiber FLOAT,
 sugar FLOAT
 )
 ''')
-query = 'INSERT INTO food VALUES(?,?,?,?,?,?,?,?,?,?,)'
+query = 'INSERT INTO food VALUES (?,?,?,?,?,?,?,?,?,?)'
 field_count = 10
 for line in open('ABBREV.txt'):
     # 行分解成字段
