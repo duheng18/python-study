@@ -1,13 +1,17 @@
 # -*- coding:utf-8 -*-
+
+# python food_query.py "kcal <= 100 AND fiber >= 10 ORDER BY sugar"
 import sqlite3, sys
 
 conn = sqlite3.connect('food.db')
 curs = conn.cursor()
 a = sys.argv[1]
-print(a)
+# print(a)
 query = 'SELECT * FROM food WHERE ' + a
 print(query)
 curs.execute(query)
+print(curs.description)
+print(curs.fetchall())
 names = [f[0] for f in curs.description]
 for row in curs.fetchall():
     for pair in zip(names, row):
