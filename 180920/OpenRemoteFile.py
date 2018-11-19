@@ -15,5 +15,6 @@ from urllib import request
 
 response = request.urlopen(
     r'http://python.org/')  # <http.client.HTTPResponse object at 0x00000000048BC908> HTTPResponse类型
+# 直接用urllib.request模块的urlopen（）获取页面，page的数据格式为bytes类型，需要decode（）解码，转换成str类型。
 page = response.read()
 page = page.decode('utf-8')
