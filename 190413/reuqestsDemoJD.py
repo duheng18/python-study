@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+# 京东
 import requests
 
 url = "https://item.jd.com/8735304.html"
