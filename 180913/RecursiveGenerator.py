@@ -35,7 +35,7 @@ def simple_generator():
 
 
 # print(simple_generator())  # <generator object simple_generator at 0x10418feb8>
-# print(simple_generator)  # <function simple_generator at 0x101bcfe18>
+# print(simple_generator)  # <method simple_generator at 0x101bcfe18>
 
 # 生成器方法
 # 1.外部作用域访问生成器的send方法，就像访问next方法一样，只不过前者使用一个参数（要发送的“消息”--任意对象）

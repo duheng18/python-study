@@ -16,10 +16,10 @@ def callback(event):
 
 help(Tk.bind)
 
-# Help on function bind in module tkinter:
+# Help on method bind in module tkinter:
 #
 # bind(self, sequence=None, func=None, add=None)
-#     Bind to this widget at event SEQUENCE a call to function FUNC.
+#     Bind to this widget at event SEQUENCE a call to method FUNC.
 #
 #     SEQUENCE is a string of concatenated event
 #     patterns. An event pattern is of the form
@@ -45,14 +45,14 @@ help(Tk.bind)
 #
 #     FUNC will be called if the event sequence occurs with an
 #     instance of Event as argument. If the return value of FUNC is
-#     "break" no further bound function is invoked.
+#     "break" no further bound method is invoked.
 #
 #     An additional boolean parameter ADD specifies whether FUNC will
-#     be called additionally to the other bound function or whether
-#     it will replace the previous function.
+#     be called additionally to the other bound method or whether
+#     it will replace the previous method.
 #
-#     Bind will return an identifier to allow deletion of the bound function with
+#     Bind will return an identifier to allow deletion of the bound method with
 #     unbind without memory leak.
 #
-#     If FUNC or SEQUENCE is omitted the bound function or list
+#     If FUNC or SEQUENCE is omitted the bound method or list
 #     of bound events are returned.

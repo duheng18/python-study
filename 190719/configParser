@@ -1,0 +1,10 @@
+用来解析类型.ini文件
+[tomcat_server]
+Ip_address:192.168.22.10
+account:testerhome
+password:123456
+Config实例常用方法：
+    config.get('Section','option'):获取指定section下对应option的值
+    config.sections():获取配置文件中所有的sections
+    config.has_section('session'):判断配置文件中是否有对应session
+    config.has_option('section','option'):判断对应section是否有对应的option

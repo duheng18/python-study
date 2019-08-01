@@ -13,7 +13,7 @@ Label(second, text="I'm in the second window!").pack()
 for i in range(10): Button(text=i).pack()
 
 # help(Pack.config)
-# Help on function pack_configure in module tkinter:
+# Help on method pack_configure in module tkinter:
 #
 # pack_configure(self, cnf={}, **kw)
 #     Pack a widget in the parent widget. Use as options:
@@ -32,7 +32,7 @@ for i in range(10): Button(text=i).pack()
 #     side=TOP or BOTTOM or LEFT or RIGHT -  where to add this widget.
 
 # help(Grid.configure)
-# Help on function grid_configure in module tkinter:
+# Help on method grid_configure in module tkinter:
 #
 # grid_configure(self, cnf={}, **kw)
 #     Position a widget in the parent widget in a grid. Use as options:
@@ -50,7 +50,7 @@ for i in range(10): Button(text=i).pack()
 #                   widget stick to the cell boundary
 
 help(Place.config)
-# Help on function place_configure in module tkinter:
+# Help on method place_configure in module tkinter:
 #
 # place_configure(self, cnf={}, **kw)
 #     Place a widget in the parent widget. Use as options:

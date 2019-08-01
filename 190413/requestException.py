@@ -10,3 +10,6 @@ def getHTMLText(url):
 if  __name__=="__main__":
     url="http://www.baidu.com"
     print(getHTMLText(url))
+
+
+help('modules')

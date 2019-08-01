@@ -58,7 +58,7 @@ def function():
 #
 # instance = Class()
 # instance.method()
-# instance.method = function
+# instance.method = method
 # instance.method()
 
 # self参数并不依赖于调用方法的方式，使用instance.method(实例.方法)的形式，可以随意使用其他变量引用同一个方法：
