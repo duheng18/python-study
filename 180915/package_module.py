@@ -24,6 +24,6 @@ print(range.__doc__)
 
 # 使用源代码
 print(copy.__file__)
-# /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/copy.py
+# /Library/Frameworks/Python.framework/Versions/3.6/lib/excise.6/copy.py
 
 
