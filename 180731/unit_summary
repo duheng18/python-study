@@ -1,8 +1,0 @@
-单元小结
-文件的使用
-文件的使用方式：打开-操作-关闭
-三个文件读取方法 三个文件写入方法
-文本文件&二进制文件 open(,)和.close()
-文件内容的读取：.read() .readline() .readlines()
-数据的文件写入：.write() .writelines() .seek()
-

@@ -1,9 +1,0 @@
-commands/subprocess模块
-commands模块常用方法：Commands一般用在linux
- commands.getoutput(command):获取命令执行后的输出结果
- commands.getstatus(command):获取命令执行后的返回状态码
- commands.getstatusoutput(command):返回一个元组，第一个元素是状态码，第二个元素是输出结果
-subprocess模块常用方法：可用在windows和Linux
- subprocess.call(command,shell=True):执行windows下命令，返回执行状态和结果
- subprocess.check_call(command,shell=True):执行windows下命令，返回执行状态和结果
- subprocess.check_output(command,shell=True):返回执行命令后的输出
