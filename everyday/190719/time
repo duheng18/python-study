@@ -1,0 +1,9 @@
+time/datatime模块
+time模块常用方法：
+time.time()获取1970.1.1.0:0:0到当前的时间
+time.localtime():获取本地时间
+time.gmtime():获取格里尼治时间
+time.strftime():格式化时间格式
+time.strptime():字符串时间格式转化为时间
+time.mktime():将时间元组转换为1970/1/1 0:0:0到目前的时间值
+datetime.timedelta:计算两个datetime对象的时间差

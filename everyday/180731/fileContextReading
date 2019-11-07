@@ -1,0 +1,5 @@
+文件内容的读取
+<f>.read(size=-1) 读入全部内容，如果给出参数，读入前size长度 如：s=f.read(2)
+<f>.readline(size=-1) 读入一行内容，如果给出参数，读入该行前size长度如：s=f.readline()
+<f>.readlines(hint=-1) 读入文件所有行，以每行为元素形成列表，如果给出参数，读入前hint行 s=f.readlines()
+

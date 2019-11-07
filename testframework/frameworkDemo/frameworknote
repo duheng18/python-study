@@ -1,0 +1,44 @@
+Python主要测试框架
+Unittest+htmltestrunner进行测试；--了解测试框架的基础知识
+pytest管理测试用例+allure生成精美报告
+除了htmltestrunner三个都叫测试框架
+
+测试框架可以为我们做些什么？
+手工测试主要的工作有哪些？
+将上述活动哪些可以变成通用的自动化？
+编写用例：
+执行用例：这个可以自动执行-》unittest,pytest
+生成报告：这个可以自动执行-》allure2,unittest,pytest
+这个框架不只应用在单元中，接口中，可以在UI（WEB/APP）
+
+主要技术内容
+1.unittest介绍，测试框架结构，断言
+2.unittest测试用例执行过程，生成html的测试报告
+3.pytest的介绍，相关库，测试框架结构，断言
+    1.fixture的详述及实例
+        1.fixture替代setup,yield实现类似setup和teardown,fixture和conftest实现数据共享
+        2.request传递参数、自动激活、多个fixture，嵌套的fixture
+    2.@pytest.mark的各种使用
+        1.参数化和数据驱动
+        2.断言及执行结果不同比较
+        3.fixture传递参数与数据驱动结合
+    3.pytest的各种灵活执行测试
+    4.并行测试
+4.allure框架的使用，报告包含内容
+5.如何修改代码达到添加标题，步骤，功能，与测试管理工具bug和环境链接
+
+什么是unittest?
+python自带的单元测试框架
+常用在单元测试，自动化测试中
+提供用例组织与执行
+提供丰富的断言方法-验证函数等功能是否正确
+加上HTMLTestRunner可以生产html的报告
+3-5年以前的公司有用这个实现自动化测试的，有现在依然用的。
+测试框架结构
+总结：
+1、setUp用来为测试准备环境，tearDown用来清理环境。
+2、如果想要在所有case执行之前准备一次环境，并在所有case执行结束之后再清理环境，
+我们可以用setUpClass()与tearDownClass();比如:数据库连接及销毁
+3、如果想有些方法不在本次执行使用@unittest.skip
+4、测试方法的命名:以test开头
+5、各种执行-单一用例，全部

@@ -1,0 +1,12 @@
+Pytest高级用法-自定义marks
+测试场景：
+    在大厂里面，一个系统的测试用例好几千个，每次发版都执行，来不及；
+    通过关键字来运行测试用例pytest-k,缺陷-难于维护、无法多重打标
+    通过标签来运行测试用例，即可以作用于函数也可以作用于类
+
+Pytest高级用法-fixtures
+什么是fixtures:
+    类似于unittest里的setUp,tearDown;
+    Pytest fixtures调用起来比unittest的setUp,tearDown方便
+    支持不同级别的fixtures(session,class,function)
+    调用更灵活，支持直接函数名调用、decorator调用、autouse

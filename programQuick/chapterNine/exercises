@@ -1,0 +1,9 @@
+1.shutil.copy()和 shutil.copytree()之间的区别是什么?
+1.shutil.copy() 函数将拷贝一个文件，而shutil.copytree()将拷贝整个文件夹，以及它的所有内容。
+2.什么函数用于文件改名?
+shutil.move() 函数用于重命名文件，以及文件移动。
+3.send2trash 和 shutil 模块中的删除函数之间的区别是什么?
+send2trash 函数将一个文件或文件夹移到回收站，而 shutil 函数将永久地删除文件和文件夹。
+4.ZipFile 对象有一个 close()方法，就像 File 对象的 close()方法。
+ZipFile 对象的什么方法等价于 File 对象的 open()方法?
+zipfile.ZipFile()函数等价于open()函数，第一个参数是文件名，第二个参数是打开ZIP文件的模式(读、写或添加)。

@@ -1,0 +1,25 @@
+Pytest优势
+简单灵活，像写Python代码一样写测试用例；
+为测试方法输入不同参数化；
+自动重试失败的测试用例；unittest不支持，需要重新构造方法，把失败测试用例取出来重新跑
+支持allure2测试报告；向上报告：饼图、柱状图、统计报表 向下报告：测试log、抛的异常
+具有很多第三方插件；
+（http://plugincompat.herokuapp.com/）698个插件
+
+Pytest编写规范
+编写规范：
+    测试文件以test_开头（以_test结尾也可以）
+    测试类以Test开头，并且不能带有__init__方法
+    测试函数以test_开头
+
+Pytest是最好的Python自动化测试框架！没有之一！
+Pytest第三方组件
+pytest-sugar 调式进度条-好看
+pytest-assume --全部执行，错误的也暴露出来
+pytest-ordering -指定执行顺序
+pytest-selenium
+pytest-play
+pytest-rerunfailures
+pytest-allure
+pytest-datadir
+pytest-datafiles

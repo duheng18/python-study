@@ -1,0 +1,51 @@
+目录
+allure介绍-allure报告概览-allure安装-pytest allure插件-allure 报告的生成-
+allure特性:Feature/Story/Severity/Step/Issue/TestCase/link Tittle/attach/Description
+-按feature,story运行-定制allure报告
+#Allure介绍
+allure是一个轻量级的，灵活的，支持多语言的测试报告工具；
+多平台，奢华的report框架；
+可以为dev/qa提供详尽的测试报告、测试步骤、log;
+也可以为管理层提供high level统计报告;
+Java语言开发的，支持pytest,JavaScript,PHP,ruby
+可以集成到Jenkins
+#Allure报告概览
+pytest --alluredir=log/testreport/xml src/testcases/
+allure serve log/testreport产生到临时目录
+allure generate -clean log/testreport/xml -o log/testreport/html,
+产生到指定目录
+
+allure特性-feature/story
+Feature与story的关系
+    Feature相当于一个功能，一个大的模块；
+    Story相当于对应这个功能或者模块下的不同场景，分支功能；
+    Feature和story类似父子关系
+severity（级别）
+    Blocker级别：中断缺陷（客户端程序无响应，无法执行下一步操作）
+    Critical级别：临界缺陷（功能点缺失）
+    Normal级别：普通缺陷（数值计算错误）
+    Minor级别：次要缺陷（界面错误与UI需求不符）
+    Trivial级别：轻微缺陷（必输项无提示，或者提示不规范 ）
+
+pytest --help | grep allure
+
+allure特性-step
+测试过程中每个关键步骤；
+在app,web自动测试当中，建议没切换到一个新的页面，当做一个step
+
+allure特性-issue,testcase
+关联测试用例；
+关联bug
+
+allure特性-parameters
+一次性运行多个测试用例
+
+allure-运行不同测试用例
+
+按features运行测试用例
+pytest --alluredir=log/report/xml --allure-features=测试登录功能，
+测试我的自选 scr/testcases/alluredemo
+按story运行测试用例
+pytest --alluredir=log/report/xml --allure-stories=测试已登录的场景src/testcases/
+按severity运行测试用例
+pytest --alluredir=log/testreport/xml --allure-severities=blocker testcases/alluredemo

@@ -1,0 +1,15 @@
+利用以下的方法，selenium 也可以模拟点击各种浏览器按钮:
+    browser.back()      点击“返回”按钮。
+    browser.forward()   点击“前进”按钮。
+    browser.refresh()   点击“刷新”按钮。
+    browser.quit()      点击“关闭窗口”按钮。
+
+
+   id
+   name
+   xpath
+   link_text
+   partial_link_text
+   clas_name
+   tag_namep
+   css_selector

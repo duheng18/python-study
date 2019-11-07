@@ -1,0 +1,36 @@
+1.购物车功能测试报告信息
+场景：希望在报告中看到测试功能，子功能或场景，测试步骤，包括测试附加信息
+解决：@Feature,story,step,@attach
+步骤：
+    1.import allure
+    2.功能上加@allure.feature('功能名称')
+    3.子功能上加@allure.story('子功能名称')
+    4.步骤上加@allure.step('步骤细节')
+    5.需要附加的信息，可以是数据，文本，图片，网页，在要附加的地方加@allure.attach('具体文本信息')
+    6.如果只测试购物车功能可以加限制过滤：
+      pytest 文件名 --allure_features='购物车功能'--allure_stories='加入购物车'
+2.按重要性级别进行一定范围测试
+场景：通常测试有P0,冒烟测试，验证上线测试，有按重要性级别来分别执行的，
+    比如明天上线要把主流程和重要模块都跑一遍。
+解决：通过附加pytest.mark标记，或通过命名方式，也可通过allure.severity来附加标记。级别：TRIVIAL:不重要，
+     Minor不太重要，normal:正常问题，critical:严重，Blocker:阻塞
+     Blocker级别：中断缺陷（客户端程序无响应，无法执行下一步操作）
+     Critical级别：临界缺陷（功能点缺失）
+     Normal级别：普通缺陷（数值计算错误）
+     Minor级别：次要缺陷（界面错误与UI需求不符）
+     Trivial级别：轻微缺陷（必输项无提示，或者提示不规范）
+
+步骤：
+    1.在方法和类上面加@allure.severity(allure.severity_level.TRIVIAL)
+    2.执行时，pytest -s -v 文件名 --allure-severities normal,critical
+3.字符串相加功能测试报告展示
+4.前端自动化测试-截图
+场景：前端自动化测试经常需要附加图片或html，在适当的地方，适当的时机截图
+解决：@allure.attach显示许多不同类型的提供的附件，可以补充测试，步骤或测试结果。
+步骤：
+    附加网页：
+        allure.attach(body(内容),name,attachment_type,extension):
+        allure.attach('<head></head><body>首页</body>','这是错误页的结果信息'，allure.attachment_type.HTML)
+    附加图片：
+        allure.attach.file(source,name,attachment_type,extension):
+        allure.attach.file("./result/b.png",attachment_type=allure.attachment_type.PNG)

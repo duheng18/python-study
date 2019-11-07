@@ -1,0 +1,35 @@
+常用的字符串方法
+1.是否以start开头：str.startswith('start')
+  是否以end结尾：str.endswith('end')
+  是否全为字母或数字：str.isalnum()
+  是否全字母：str.isalpha()
+  是否全数字：str.isdigit()
+  是否全小写：str.islower()
+  是否全大写：str.isupper()
+2.全部大写：str.upper()
+  全部小写：str.lower()
+  大小写互换：str.swapcase()
+  首字母大写，其余小写：str.capitalize()
+  首字母大写：str.title()
+3.搜索指定字符串，没有返回-1，str.find('t')
+  指定起始位置搜索：str.find('t',start)
+  指定起始及结束位置搜索：str.find('t',start,end)
+  从右边开始查找：str.rfind('t')
+  搜索到多少个指定字符串：str.count('t')
+  上面所有方法都可用index代替，不同的是使用index查找不到会抛异常，而find返回-1
+
+
+1.替换old为new：str.replace('old','new')替换指定次数的old为new：
+str.replace('old','new',maxReplaceTimes)
+2.去两边空格：str.strip()
+  去左空格：str.lstrip()
+  去右空格：str.rstrip()
+  去两边字符串：str.strip('d')
+  相应的也有lstrip，rstrip
+3.str.join()方法用于将序列中的元素以指定的字符连接生成一个新的字符串。
+    s1.join(seq),s1="-",seq是你要连接的序列
+4.print('Hi,%s,you are $%d.'%('linda',100000000))
+  print('Hello,[0],成绩提升了[1:.1f]%'.format('小明'，17.25))
+
+
+

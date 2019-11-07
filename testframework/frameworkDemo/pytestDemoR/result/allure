@@ -1,0 +1,18 @@
+使用Allure框架生成精美报告
+allure学习
+https://github.com/allure-framework/allure2/releases
+mac安装：brew install allure
+官网：http://allure.qatools.ru/
+
+使用allure2生成精美报告
+1.安装：brew install allure
+2.pip install allure-pytest
+3.在测试执行期间收集结果
+pytest -s -q --alluredir=./result/
+4.测试完成后查看实际报告，在线看报告。
+allure serve ./result/
+5.从结果生成报告，这是一个启动tomcat的服务，只生成报告
+allure generate ./result/ -o ./report/ --clean
+6.覆盖路径加--clean
+7.打开报告
+allure open -h 127.0.0.1 -p 8883 ./report/

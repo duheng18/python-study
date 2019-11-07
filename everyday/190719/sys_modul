@@ -1,0 +1,8 @@
+sys模块常用方法：
+sys.path返回当前PYTHONPATH的列表
+sys.argv获取命令行参数
+sys.exit退出当前python进程
+sys.platform获取当前系统平台如：linux
+sys.stdin标准输入流
+sys.stdout标准输出流
+sys.stderr标准错误流
