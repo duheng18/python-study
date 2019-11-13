@@ -11,5 +11,69 @@
    link_text
    partial_link_text
    clas_name
-   tag_namep
+   tag_name
    css_selector
+
+1.简单描述 webbrowser、requests、BeautifulSoup 和 selenium 模块之间的不同。
+webbrowser模块有一个open()方法，它启动web浏览器，打开指定的URL，就这样。
+Requests 模块可以从网上下载文件和页面。BeautifulSoup 模块解析 HTML。
+最后，selenium 模块可以启动并控制浏览器。
+
+2.requests.get()返回哪种类型的对象?如何以字符串的方式访问下载的内容?
+requests.get()函数返回一个Response对象，它有一个text属性，包含下载内容的字符串。
+
+3.哪个 Requests 方法检查下载是否成功?
+如果下载有问题,raise_for_status()方法将抛出异常，如果下载成功，什么也不做。
+
+4.如何取得 Requests 响应的 HTTP 状态码?
+Response对象的status_code属性包含了HTTP状态码。
+
+5.如何将 Requests 响应保存到文件?
+以'wb'，即“写二进制”模式在你的计算机上打开新文件后，利用一个for循环迭代遍历Response对象
+的 iter_content() 方法，将各段写入该文件。下面是例子:
+saveFile = open('filename.html', 'wb')
+for chunk in res.iter_content(100000):
+    saveFile.write(chunk)
+
+6.要打开浏览器的开发者工具，快捷键是什么?
+F12 在 Chrome 中打开开发者工具。按下Ctrl-Shift-C(在 Windows 和 Linux 上)
+或-Option-C(在 OS X)，在 Firefox 中打开开发者工具。
+
+7.在开发者工具中，如何查看页面上特定元素的 HTML?
+右键点击页面上的元素，并从菜单中选择 Inspect Element。
+
+8.要找到 id 属性为 main 的元素，CSS 选择器的字符串是什么?
+'#main'
+
+9.要找到 CSS 类为 highlight 的元素，CSS 选择器的字符串是什么?
+'.highlight'
+
+10.要找到一个<div>元素中所有的<div>元素，CSS 选择器的字符串是什么?
+'div div'
+
+11.要找到一个<button>元素，它的 value 属性被设置为 favorite，CSS 选择器的字符串是什么?
+'button[value="favorite"]'
+
+12.假定你有一个Beautiful Soup的Tag对象保存在变量spam中，针对的元素是
+<div>Hello world!</div>。如何从这个 Tag 对象中取得字符串'Hello world!'?
+spam.getText()
+
+13.如何将一个 Beautiful Soup 的 Tag 对象的所有属性保存到变量 linkElem 中?
+linkElem.attrs
+
+14.运行 import selenium 没有效果。如何正确地导入 selenium 模块?
+selenium 模块是通过 from selenium import webdriver 导入的。
+
+15.find_element_*和 find_elements_*方法之间的区别是什么?
+find_element_* 方法将第一个匹配的元素返回，作为一个 WebElement 对象。
+find_elements_* 方法返回所有匹配的元素，作为一个 WebElement 对象列表。
+
+16.Selenium 的 WebElement 对象有哪些方法来模拟鼠标点击和键盘击键?
+click() 和 send_keys() 方法分别模拟鼠标点击和键盘按键。
+
+17.你可以在 Submit 按钮的 WebElement 对象上调用 send_keys(Keys.ENTER)，但
+利用 selenium，还有什么更容易的方法提交表单?
+对表单中的任意对象调用 submit() 方法将提交该表单。
+
+18.利用 selenium 如何模拟点击浏览器的“前进”、“返回”和“刷新”按钮?
+forward()、back() 和 refresh() 等 WebDriver 对象方法模拟了这些浏览器按钮。

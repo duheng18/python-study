@@ -1,5 +1,0 @@
-logging模块
-logging.basicConfig
- logging.basicConfig(filename="web.log",level=0,
- format='%(asctime)s %(name)s %(levelname)s %(module)s:%(lineno)d %(message)s')
- logging.handlers.RotatingFileHandle:log文件到了一定大小自动备份到一个新的文件

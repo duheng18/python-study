@@ -1,4 +1,0 @@
-json模块
-json常用方法：
-json.dumps:将python对象转化json字符串
-json.load:将json字符串转化为python对象
