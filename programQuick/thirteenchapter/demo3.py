@@ -13,7 +13,7 @@ for pageNum in range(pdf1Reader.numPages):
 for pageNum in range(pdf2Reader.numPages):
     pageObj = pdf2Reader.getPage(pageNum)
     pdfWriter.addPage(pageObj)
-pdfOutputFile=open('combinedminutes.pdf','wb')
+pdfOutputFile = open('combinedminutes.pdf', 'wb')
 pdfWriter.write(pdfOutputFile)
 pdfOutputFile.close()
 pdf1file.close()
