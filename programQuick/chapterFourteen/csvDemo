@@ -1,0 +1,22 @@
+1.哪些功能是 Excel 电子表格有，而 CSV 电子表格没有?
+在 Excel中，电子表格的值可以是字符串以外的数据类型，单元格可以有不同的字体、大小或顔色设置，
+单元格可以有不同的宽度和高度，相邻的单元格可以合并，可以嵌入图像和图表。
+
+2.向 csv.reader()和 csv.writer()传入什么，来创建Reader和Writer对象?
+传入一个 File 对象，通过调用 open() 获得。
+
+3.对于 Reader 和 Writer 对象，File 对象需要以什么模式打开?
+对于 Reader对象，File对象需要以读二进制模式('rb')打开，对于 Writer对象，
+需要以写二进制模式('wb')打开。
+
+4.什么方法接受一个列表参数，并将其写入 CSV 文件?
+writerow() 方法。
+
+5.delimiter和lineterminator关键字参数有什么用?
+delimiter参数改变了分隔一行中单元格所用的字符串.lineterminator参数改变了分隔行的字符串。
+
+6.什么函数接受一个 JSON 数据的字符串，并返回一个 Python 数据结构?
+json.loads()
+
+7.什么函数接受一个 Python 数据结构，并返回一个 JSON 数据的字符串?
+json.dumps()

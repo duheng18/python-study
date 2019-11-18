@@ -1,0 +1,44 @@
+1.不能将PDF文件名的字符串传递给PyPDF2.PdfFileReader()函数。应该向该函数传递什么?
+File对象由open()返回。
+pdfReader = PyPDF2.PdfFileReader(open('encrypted.pdf', 'rb'))
+
+2.PdfFileReader()和 PdfFileWriter()需要的File对象，应该以何种模式打开?
+对PdfFileReader()用读二进制('rb')，对PdfFileWriter()用写二进制('wb')。
+
+3.如何从PdfFileReader对象中取得第5页的Page对象?
+调用getPage(4)将返回第5页的Page对象，因为0页就是第1页。
+
+4.什么PdfFileReader变量保存了PDF文档的页数?
+在PdfFileReader对象中，numPages变量保存了页数的整数。
+
+5.如果PdfFileReader对象表示的PDF文档是用口令swordfish加密的，应该先做什么，
+才能从中取得 Page 对象?
+调用 decrypt('swordfish')。
+
+6.使用什么方法来旋转页面?
+rotateClockwise() 和 rotateCounterClockwise() 方法。旋转度数作为整数参数传入。
+
+7.什么方法返回文件demo.docx的Document对象?
+docx.Document('demo.docx')
+
+8.Paragraph对象和Run对象之间的区别是什么?
+文档包含多个段落。段落从一个新行开始，包含多个Run对象。Run对象是段落内连续的字符分组。
+
+9.doc变量保存了一个Document对象，如何从中得到Paragraph对象的列表?
+使用 doc.paragraphs。
+
+10.哪种类型的对象具有 bold、underline、italic、strike 和 outline 变量?
+Run 对象有这些变量(不是 Paragraph)。
+
+11.bold 变量设置为 True、False 或 None，有什么区别?
+True 总是让 Run 对象成为粗体，False 让它总是不是粗体，不论样式的粗
+体设置是什么。None 让 Run 对象使用该样式的粗体设置。
+
+12.如何为一个新Word文档创建Document对象?
+调用 docx.Document() 函数。
+
+13.doc变量保存了一个Document对象，如何添加一个文本是'Hello there!'的段落?
+doc.add_paragraph('Hello there!')
+
+14.哪些整数表示 Word 文档中可用的标题级别?
+整数 0、1、2、3 和 4。

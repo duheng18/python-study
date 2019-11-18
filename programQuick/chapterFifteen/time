@@ -1,0 +1,51 @@
+datetime对象(属于datetime模块)包含一些整型值，保存在year、month、day、hour、minute
+和second 等属性中。
+
+timedelta对象(属于datetime模块)表示的一段时间，而不是一个特定的时刻。
+
+下面回顾了时间函数及其参数和返回值:
+time.time()函数返回一个浮点值，表示当前时刻的Unix纪元时间戳。
+
+time.sleep(seconds)函数让程序暂停seconds参数指定的秒数。
+
+datetime.datetime(year, month, day, hour, minute, second)函数返回参数指定的时
+刻的datetime对象。如果没有提供hour、minute或second参数，它们默认为 0。
+
+datetime.datetime.now()函数返回当前时刻的datetime对象。
+
+datetime.datetime.fromtimestamp(epoch)函数返回epoch时间戳参数表示的时刻的datetime对象。
+
+datetime.timedelta(weeks, days, hours, minutes, seconds, milliseconds, microseconds)函
+数返回一个表示一段时间的timedelta对象。该函数的关键字参数都是可选的，不包括month或year。
+
+total_seconds()方法用于timedelta对象，返回timedelta对象表示的秒数。
+
+strftime(format)方法返回一个字符串，用format字符串中的定制格式来表示datetime对象表示的时间。
+
+datetime.datetime.strptime(time_string, format)函数返回一个 datetime 对象，它的
+时刻由 time_string 指定，利用 format 字符串参数来解析。
+
+1.什么是 Unix 纪元?
+1.许多日期和时间程序使用的一个参考时刻。该时刻是 1970 年 1 月 1 日，UTC。
+
+2.什么函数返回自 Unix 纪元以来的秒数?
+time.time()
+
+3.如何让程序刚好暂停 5 秒?
+time.sleep(5)
+
+4.round()函数返回什么?
+返回与传入参数最近的整数。例如，round(2.4)返回 2。
+
+5.datetime 对象和 timedelta 对象之间的区别是什么?
+datetime 对象表示一个特定的时刻。timedelta 对象表示一段时间。
+
+6.假设你有一个函数名为spam()。如何在一个独立的线程中调用该函数并运行其中的代码?
+threadObj = threading.Thread(target=spam)
+threadObj.start()
+
+7.为了避免多线程的并发问题，应该怎样做?
+确保在一个线程中执行的代码不会和另一个线程中的代码读写相同的变量。
+
+8.如何让 Python 程序运行 C:\ Windows\System32 文件夹中的 calc.exe 程序?
+subprocess.Popen('c:\\Windows\\System32\\calc.exe')

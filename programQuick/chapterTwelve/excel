@@ -47,7 +47,7 @@ wb.save('example.xlsx')
 sheet.row_dimensions[5].height=100
 
 16.如何设置列 C 的宽度?
-sheet.row_dimensions['C'].width=200
+sheet.column_dimensions['C'].width=200
 
 17.列出一些 openpyxl 2.1.4 不会从电子表格文件中加载的功能。
 OpenPyXL 2.0.5 不会加载冻结窗格、打印标题、图像或图表。
